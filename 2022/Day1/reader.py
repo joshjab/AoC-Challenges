@@ -1,6 +1,8 @@
 import pandas as pd
 from itertools import groupby
+import time
 
+start_time = time.time()
 ### Part 1 ###
 with open('input.txt') as file:
     lines = file.read().splitlines()
@@ -24,3 +26,4 @@ print("Elf with the most calories: #%d, %d" % (max_elf, df.iloc[max_elf]['Sum'])
 ### Part 2 ###
 
 print("Calories of top 3 elves: %d" % (df['Sum'].nlargest(3).sum()))
+print("--- Execution: %.4f ms ---" % (float(time.time() - start_time)*1000))
