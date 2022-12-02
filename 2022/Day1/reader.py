@@ -1,7 +1,7 @@
 import pandas as pd
 from itertools import groupby
 
-### Pandas method ###
+### Part 1 ###
 with open('input.txt') as file:
     lines = file.read().splitlines()
 
@@ -19,3 +19,8 @@ max_elf = df['Sum'].idxmax()
 
 
 print("Elf with the most calories: #%d, %d" % (max_elf, df.iloc[max_elf]['Sum']))
+#print(df.to_markdown())
+
+### Part 2 ###
+
+print("Calories of top 3 elves: %d" % (df['Sum'].nlargest(3).sum()))
